@@ -2,7 +2,7 @@ public class Board {
     private int width;
     private int len;
     public Entry[][] board;
-    public static boolean fatal = false; // record if mine has revealed
+    public boolean fatal = false; // record if mine has revealed
 
     public Board(int width, int len) {
         this.width = width;

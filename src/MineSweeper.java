@@ -11,6 +11,9 @@ public class MineSweeper {
             int x = scanner.nextInt();
             int y = scanner.nextInt();
             board.revealEntry(x, y);
+            if (board.fatal) {
+                return;
+            }
         }
     }
 }
