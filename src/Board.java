@@ -19,14 +19,21 @@ public class Board {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
                 if (!board[i][j].getRevealed()) {
-                    System.out.print("? ");
+                    board[i][j].setClue("?");
+                    if (board[i][j].getClear()) {
+                        board[i][j].setClue("C");
+                    }
+                    System.out.print(board[i][j].getClue() + " ");
                 } else if (board[i][j].hasMine && board[i][j].getRevealed()) {
-                    System.out.print("M ");
+                    board[i][j].setClue("M");
+                    System.out.print(board[i][j].getClue() + " ");
                     fatal = true;
                 } else if (!board[i][j].hasMine && board[i][j].getRevealed()) {
                     int adjacentMines = calculateAdjacentMines(board, i, j);
                     board[i][j].setAdjacentMines(adjacentMines);
-                    System.out.print(adjacentMines + " ");
+                    board[i][j].setClue(String.valueOf(adjacentMines));
+                    System.out.print(board[i][j].getClue() + " ");
+                    // setCellClear(board, i, j);
                 } else {
                     continue;
                 }
@@ -79,7 +86,54 @@ public class Board {
 
     public void revealEntry(int i, int j) {
         board[i][j].setRevealed();
+        setCellClear(board, i, j);
         printBoard();
+    }
+
+    public void setCellClear(Entry[][] board, int i, int j) {
+        board[i][j].adjacentMines = calculateAdjacentMines(board, i, j);
+        if (!board[i][j].hasMine && board[i][j].adjacentMines == 0) {
+            // top
+            if (i - 1 >= 0 && !board[i - 1][j].getRevealed()) {
+                // board[i - 1][j].setClue("C");
+                board[i - 1][j].setClear();
+            }
+            // bottom
+            if (i + 1 < board.length && !board[i + 1][j].getRevealed()) {
+                // board[i + 1][j].setClue("C");
+                board[i + 1][j].setClear();
+            }
+            // left
+            if (j - 1 >= 0 && !board[i][j - 1].getRevealed()) {
+                // board[i][j - 1].setClue("C");
+                board[i][j - 1].setClear();
+            }
+            // right
+            if (j + 1 < board[0].length && !board[i][j + 1].getRevealed()) {
+                // board[i][j + 1].setClue("C");
+                board[i][j + 1].setClear();
+            }
+            // top-left
+            if (i - 1 >= 0 && j - 1 >= 0 && !board[i - 1][j - 1].getRevealed()) {
+                // board[i - 1][j - 1].setClue("C");
+                board[i - 1][j - 1].setClear();
+            }
+            // top-right
+            if (i - 1 >= 0 && j + 1 < board[0].length && !board[i - 1][j + 1].getRevealed()) {
+                // board[i - 1][j + 1].setClue("C");
+                board[i - 1][j + 1].setClear();
+            }
+            // bottom-left
+            if (i + 1 < board.length && j - 1 >= 0 && !board[i + 1][j - 1].getRevealed()) {
+                // board[i + 1][j - 1].setClue("C");
+                board[i + 1][j - 1].setClear();
+            }
+            // bottom-right
+            if (i + 1 < board.length && j + 1 < board[0].length && !board[i + 1][j + 1].getRevealed()) {
+                // board[i + 1][j + 1].setClue("C");
+                board[i + 1][j + 1].setClear();
+            }
+        }
     }
 
     /**

@@ -4,6 +4,9 @@ public class Entry {
     public boolean revealed;
     public boolean hasMine;
     public int adjacentMines;
+    private boolean isClear;
+
+    private String clue;
 
     public void setRevealed() {
         revealed = true;
@@ -16,6 +19,17 @@ public class Entry {
     public void setAdjacentMines(int n) {
         adjacentMines = n;
     }
+
+    public void setClue(String s) {
+        clue = s;
+    }
+
+    public String getClue() {
+        return clue;
+    }
+
+    public void setClear() {isClear = true; }
+    public boolean getClear() {return isClear;}
 
     public Entry() {
         Random rand = new Random();
