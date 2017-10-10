@@ -27,7 +27,6 @@ public class Board {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
                 if (!board[i][j].getRevealed()) {
-                    board[i][j].setClue("?");
                     if (board[i][j].getClear()) {
                         board[i][j].setClue("C");
                     } else if(guaranteeMine(board, i, j)) {

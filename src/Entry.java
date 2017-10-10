@@ -44,5 +44,6 @@ public class Entry {
         if (prob >= 0.9) {
             hasMine = true;
         }
+        clue = "?";
     }
 }
