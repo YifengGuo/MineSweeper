@@ -100,46 +100,12 @@ public class Board {
      */
     public void setCellClear(Entry[][] board, int i, int j) {
         board[i][j].adjacentMines = calculateAdjacentMines(board, i, j);
+        List<Entry> adjacentEntries = getAdjacentEntries(board, i, j);
         if (!board[i][j].hasMine && board[i][j].adjacentMines == 0) {
-            // top
-            if (i - 1 >= 0 && !board[i - 1][j].getRevealed()) {
-                // board[i - 1][j].setClue("C");
-                board[i - 1][j].setClear();
-            }
-            // bottom
-            if (i + 1 < board.length && !board[i + 1][j].getRevealed()) {
-                // board[i + 1][j].setClue("C");
-                board[i + 1][j].setClear();
-            }
-            // left
-            if (j - 1 >= 0 && !board[i][j - 1].getRevealed()) {
-                // board[i][j - 1].setClue("C");
-                board[i][j - 1].setClear();
-            }
-            // right
-            if (j + 1 < board[0].length && !board[i][j + 1].getRevealed()) {
-                // board[i][j + 1].setClue("C");
-                board[i][j + 1].setClear();
-            }
-            // top-left
-            if (i - 1 >= 0 && j - 1 >= 0 && !board[i - 1][j - 1].getRevealed()) {
-                // board[i - 1][j - 1].setClue("C");
-                board[i - 1][j - 1].setClear();
-            }
-            // top-right
-            if (i - 1 >= 0 && j + 1 < board[0].length && !board[i - 1][j + 1].getRevealed()) {
-                // board[i - 1][j + 1].setClue("C");
-                board[i - 1][j + 1].setClear();
-            }
-            // bottom-left
-            if (i + 1 < board.length && j - 1 >= 0 && !board[i + 1][j - 1].getRevealed()) {
-                // board[i + 1][j - 1].setClue("C");
-                board[i + 1][j - 1].setClear();
-            }
-            // bottom-right
-            if (i + 1 < board.length && j + 1 < board[0].length && !board[i + 1][j + 1].getRevealed()) {
-                // board[i + 1][j + 1].setClue("C");
-                board[i + 1][j + 1].setClear();
+            for (Entry e : adjacentEntries) {
+                if (!e.getRevealed()) {
+                    e.setClear();
+                }
             }
         }
     }
