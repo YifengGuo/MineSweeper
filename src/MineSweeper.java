@@ -1,5 +1,7 @@
 import java.util.Scanner;
-
+/**
+ * Created by guoyifeng on 10/6/17.
+ */
 public class MineSweeper {
     public static Board board;
     public static void main(String[] args) {

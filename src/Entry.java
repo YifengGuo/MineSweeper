@@ -1,10 +1,15 @@
 import java.util.Random;
-
+/**
+ * Created by guoyifeng on 10/6/17.
+ */
 public class Entry {
     public boolean revealed;
     public boolean hasMine;
-    public int adjacentMines;
+    public int adjacentMines = Integer.MAX_VALUE;
     private boolean isClear;
+
+    public int x; // x coordinate
+    public int y; // y coordinate
 
     private String clue;
 
@@ -13,7 +18,7 @@ public class Entry {
     }
 
     public boolean getRevealed() {
-        return revealed;
+        return revealed == true;
     }
 
     public void setAdjacentMines(int n) {
@@ -29,9 +34,11 @@ public class Entry {
     }
 
     public void setClear() {isClear = true; }
-    public boolean getClear() {return isClear;}
+    public boolean getClear() {return isClear == true;}
 
-    public Entry() {
+    public Entry(int x, int y) {
+        this.x = x;
+        this.y = y;
         Random rand = new Random();
         double prob = rand.nextDouble();
         if (prob >= 0.9) {
