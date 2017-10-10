@@ -64,37 +64,11 @@ public class Board {
      */
     private int calculateAdjacentMines(Entry[][] board, int i, int j) {
         int adjacentMines = 0;
-        // top
-        if (i - 1 >= 0 && board[i - 1][j].hasMine) {
-            adjacentMines++;
-        }
-        // bottom
-        if (i + 1 < board.length && board[i + 1][j].hasMine) {
-            adjacentMines++;
-        }
-        // left
-        if (j - 1 >= 0 && board[i][j - 1].hasMine) {
-            adjacentMines++;
-        }
-        // right
-        if (j + 1 < board[0].length && board[i][j + 1].hasMine) {
-            adjacentMines++;
-        }
-        // top-left
-        if (i - 1 >= 0 && j - 1 >= 0 && board[i - 1][j - 1].hasMine) {
-            adjacentMines++;
-        }
-        // top-right
-        if (i - 1 >= 0 && j + 1 < board[0].length && board[i - 1][j + 1].hasMine) {
-            adjacentMines++;
-        }
-        // bottom-left
-        if (i + 1 < board.length && j - 1 >= 0 && board[i + 1][j - 1].hasMine) {
-            adjacentMines++;
-        }
-        // bottom-right
-        if (i + 1 < board.length && j + 1 < board[0].length && board[i + 1][j + 1].hasMine) {
-            adjacentMines++;
+        List<Entry> adjacentEntries = getAdjacentEntries(board, i, j);
+        for (Entry e : adjacentEntries) {
+            if (e.hasMine) {
+                adjacentMines++;
+            }
         }
         return adjacentMines;
     }
