@@ -83,6 +83,15 @@ public class Board {
         setCellClear(board, i, j);
         for (int a = 0; a < board.length; a++) {
             for (int b = 0; b < board[0].length; b++) {
+                if (!board[a][b].getRevealed()) {
+                    if (guaranteeMine(board, a, b)) {
+                        board[a][b].setClue("X");
+                    }
+                }
+            }
+        }
+        for (int a = 0; a < board.length; a++) {
+            for (int b = 0; b < board[0].length; b++) {
                 if (board[a][b].getRevealed()) {
                     guaranteeClearEntries(board, a, b);
                 }
