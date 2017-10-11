@@ -90,10 +90,19 @@ public class Board {
                 }
             }
         }
+
         for (int a = 0; a < board.length; a++) {
             for (int b = 0; b < board[0].length; b++) {
                 if (board[a][b].getRevealed()) {
                     guaranteeClearEntries(board, a, b);
+                }
+            }
+        }
+
+        for (int a = 0; a < board.length; a++) {
+            for (int b = 0; b < board[0].length; b++) {
+                if (board[a][b].getRevealed()) {
+                    detectMineByClearEntries(board, a, b);
                 }
             }
         }
@@ -273,5 +282,38 @@ public class Board {
 //            }
 //        }
         //printBoard();
+    }
+
+    /**
+     * if number of non-mine entries among current revealed entry's adjacent entries is greater than or equals to
+     * total number of adjacent entries minus real number of adjacent mines, then we can guarantee all the other
+     * adjacent uncertain entries are mines
+     * In other word, if we can determine all the safe entries of current revealed entry, then all the other uncertain
+     * adjacent entries are mines
+     * @param board
+     * @param i
+     * @param j
+     */
+    public void detectMineByClearEntries(Entry[][] board, int i, int j) {
+        List<Entry> adjacentEntries = getAdjacentEntries(board, i, j);
+        int adjacentEntryCount = adjacentEntries.size(); // number of current entry's adjacent entries
+        int nonMineNum = 0; // record number of non-mine (C or revealed safe entries) entries among adjacent entries
+        int unknownNum = 0;
+        for (Entry e : adjacentEntries) {
+            if (!e.getClue().equals("X") && !e.getClue().equals("?")) {
+                nonMineNum++;
+            }
+            if (e.getClue().equals("?")) {
+                unknownNum++;
+            }
+        }
+        int adjacentMines = calculateAdjacentMines(board, i, j);
+        if (nonMineNum >= adjacentEntryCount - adjacentMines) {
+            for (Entry e : adjacentEntries) {
+                if (e.getClue().equals("?")) {
+                    e.setClue("X");
+                }
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@ public class MineSweeper {
             int y = scanner.nextInt();
             board.revealEntry(x, y);
             if (board.fatal) {
+                board.cheat();
                 return;
             }
         }
