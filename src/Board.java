@@ -316,4 +316,85 @@ public class Board {
             }
         }
     }
+
+    /**
+     * return current Entry given its coordinates
+     * @param board
+     * @param x
+     * @param y
+     * @return
+     */
+    public Entry getCurrentEntry(Entry[][] board, int x, int y) {
+        Entry cur = board[x][y];
+        return cur;
+    }
+
+    /**
+     * return the collection view of all entries in the board
+     * @param board
+     * @return
+     */
+    public List<Entry> getEntryList(Entry[][] board) {
+        List<Entry> list = new ArrayList<>();
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                list.add(board[i][j]);
+            }
+        }
+        return list;
+    }
+
+    /**
+     * return the collection view of all clear entries in the board
+     * @param board
+     * @return
+     */
+    public List<Entry> getClearEntryList(Entry[][] board) {
+        List<Entry> list = new ArrayList<>();
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (board[i][j].getClue().equals("C")) {
+                    list.add(board[i][j]);
+                }
+            }
+        }
+        return list;
+    }
+
+    /**
+     * return the collection view of all unknown entries in the board
+     * @param board
+     * @return
+     */
+    public List<Entry> getUnknownEntryList(Entry[][] board) {
+        List<Entry> list = new ArrayList<>();
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (board[i][j].getClue().equals("?")) {
+                    list.add(board[i][j]);
+                }
+            }
+        }
+        return list;
+    }
+
+    /**
+     * if board has no entry which is unknown or clear by not revealed,
+     * the board is solved
+     * @param board
+     * @return if the board is solved or not
+     */
+    public boolean isSolved(Entry[][] board) {
+        if (this.fatal == true) {
+            return false;
+        }
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (board[i][j].getClue().equals("?") || board[i][j].getClue().equals("C")) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }
