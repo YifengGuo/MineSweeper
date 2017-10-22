@@ -1,3 +1,5 @@
+import sun.security.ec.ECPublicKeyImpl;
+
 import java.util.Random;
 /**
  * Created by guoyifeng on 10/6/17.
@@ -45,5 +47,22 @@ public class Entry {
             hasMine = true;
         }
         clue = "?";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof Entry)) {
+            return false;
+        }
+        Entry e = (Entry) o;
+        return e.x == x
+                && e.y == y;
+    }
+    @Override
+    public String toString() {
+        return "(" + x + "," + y + ")";
     }
 }
