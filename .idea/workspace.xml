@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61c045db-2391-47d5-bf31-0abb7dec6d8b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entry.java" afterPath="$PROJECT_DIR$/src/Entry.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/KnowledgeBase.java" afterPath="$PROJECT_DIR$/src/KnowledgeBase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MineSweeper_logic.java" afterPath="$PROJECT_DIR$/src/MineSweeper_logic.java" />
     </list>
@@ -22,8 +21,8 @@
       <file leaf-file-name="KnowledgeBase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/KnowledgeBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="233" column="28" lean-forward="false" selection-start-line="233" selection-start-column="28" selection-end-line="233" selection-end-column="28" />
+            <state relative-caret-position="1998">
+              <caret line="204" column="0" lean-forward="false" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
               <folding>
                 <element signature="e#282#283#0" expanded="true" />
                 <element signature="e#303#304#0" expanded="true" />
@@ -42,13 +41,13 @@
                 <element signature="e#1546#1547#0" expanded="true" />
                 <element signature="e#1562#1563#0" expanded="true" />
                 <element signature="e#1721#1728#0" expanded="true" />
-                <element signature="e#2256#2264#0" expanded="true" />
-                <element signature="e#2331#2338#0" expanded="true" />
-                <element signature="e#3151#3158#0" expanded="true" />
-                <element signature="e#3462#3469#0" expanded="true" />
-                <element signature="e#4928#4936#0" expanded="true" />
-                <element signature="e#5580#5581#0" expanded="true" />
-                <element signature="e#5606#5607#0" expanded="true" />
+                <element signature="e#2153#2161#0" expanded="true" />
+                <element signature="e#2228#2235#0" expanded="true" />
+                <element signature="e#3000#3007#0" expanded="true" />
+                <element signature="e#3311#3318#0" expanded="true" />
+                <element signature="e#4529#4537#0" expanded="true" />
+                <element signature="e#5105#5106#0" expanded="true" />
+                <element signature="e#5131#5132#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,24 +63,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MineSweeper_logic.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MineSweeper_logic.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MineSweeper_logic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="57" column="20" lean-forward="false" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+            <state relative-caret-position="-972">
+              <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
               <folding>
                 <element signature="e#111#118#0" expanded="true" />
                 <element signature="e#177#184#0" expanded="true" />
-                <element signature="e#2880#2887#0" expanded="true" />
-                <element signature="e#4982#5004#0" expanded="true" />
-                <element signature="e#5306#5314#0" expanded="true" />
-                <element signature="e#6074#6096#0" expanded="true" />
-                <element signature="e#6340#6348#0" expanded="true" />
-                <element signature="e#6838#6860#0" expanded="true" />
-                <element signature="e#6973#6981#0" expanded="true" />
-                <element signature="e#7404#7411#0" expanded="true" />
-                <element signature="e#7566#7579#0" expanded="true" />
-                <element signature="e#7675#7682#0" expanded="true" />
+                <element signature="e#1963#1970#0" expanded="true" />
+                <element signature="e#3780#3802#0" expanded="true" />
+                <element signature="e#4158#4166#0" expanded="true" />
+                <element signature="e#4926#4948#0" expanded="true" />
+                <element signature="e#5192#5200#0" expanded="true" />
+                <element signature="e#5690#5712#0" expanded="true" />
+                <element signature="e#5825#5833#0" expanded="true" />
+                <element signature="e#6256#6263#0" expanded="true" />
+                <element signature="e#6418#6431#0" expanded="true" />
+                <element signature="e#6527#6534#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,10 +100,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board_logic.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Board_logic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Board_logic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
+            <state relative-caret-position="648">
               <caret line="39" column="28" lean-forward="false" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -154,9 +153,9 @@
         <option value="$PROJECT_DIR$/src/Symbol.java" />
         <option value="$PROJECT_DIR$/src/Board.java" />
         <option value="$PROJECT_DIR$/src/Entry.java" />
-        <option value="$PROJECT_DIR$/src/MineSweeper_logic.java" />
-        <option value="$PROJECT_DIR$/src/KnowledgeBase.java" />
         <option value="$PROJECT_DIR$/src/Board_logic.java" />
+        <option value="$PROJECT_DIR$/src/KnowledgeBase.java" />
+        <option value="$PROJECT_DIR$/src/MineSweeper_logic.java" />
       </list>
     </option>
   </component>
@@ -399,7 +398,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59087000" />
+    <option name="totallyTimeSpent" value="61915000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-6" width="1920" height="1086" extended-state="6" />
@@ -572,10 +571,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Board_logic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="39" column="28" lean-forward="false" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3776#3783#0" expanded="true" />
+            <element signature="e#4842#4843#0" expanded="true" />
+            <element signature="e#4872#4873#0" expanded="true" />
+            <element signature="e#4909#4910#0" expanded="true" />
+            <element signature="e#4939#4940#0" expanded="true" />
+            <element signature="e#4967#4968#0" expanded="true" />
+            <element signature="e#4995#4996#0" expanded="true" />
+            <element signature="e#5021#5022#0" expanded="true" />
+            <element signature="e#5047#5048#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/KnowledgeBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="233" column="28" lean-forward="false" selection-start-line="233" selection-start-column="28" selection-end-line="233" selection-end-column="28" />
+        <state relative-caret-position="1998">
+          <caret line="204" column="0" lean-forward="false" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
           <folding>
             <element signature="e#282#283#0" expanded="true" />
             <element signature="e#303#304#0" expanded="true" />
@@ -594,53 +612,34 @@
             <element signature="e#1546#1547#0" expanded="true" />
             <element signature="e#1562#1563#0" expanded="true" />
             <element signature="e#1721#1728#0" expanded="true" />
-            <element signature="e#2256#2264#0" expanded="true" />
-            <element signature="e#2331#2338#0" expanded="true" />
-            <element signature="e#3151#3158#0" expanded="true" />
-            <element signature="e#3462#3469#0" expanded="true" />
-            <element signature="e#4928#4936#0" expanded="true" />
-            <element signature="e#5580#5581#0" expanded="true" />
-            <element signature="e#5606#5607#0" expanded="true" />
+            <element signature="e#2153#2161#0" expanded="true" />
+            <element signature="e#2228#2235#0" expanded="true" />
+            <element signature="e#3000#3007#0" expanded="true" />
+            <element signature="e#3311#3318#0" expanded="true" />
+            <element signature="e#4529#4537#0" expanded="true" />
+            <element signature="e#5105#5106#0" expanded="true" />
+            <element signature="e#5131#5132#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MineSweeper_logic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="57" column="20" lean-forward="false" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        <state relative-caret-position="-972">
+          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
           <folding>
             <element signature="e#111#118#0" expanded="true" />
             <element signature="e#177#184#0" expanded="true" />
-            <element signature="e#2880#2887#0" expanded="true" />
-            <element signature="e#4982#5004#0" expanded="true" />
-            <element signature="e#5306#5314#0" expanded="true" />
-            <element signature="e#6074#6096#0" expanded="true" />
-            <element signature="e#6340#6348#0" expanded="true" />
-            <element signature="e#6838#6860#0" expanded="true" />
-            <element signature="e#6973#6981#0" expanded="true" />
-            <element signature="e#7404#7411#0" expanded="true" />
-            <element signature="e#7566#7579#0" expanded="true" />
-            <element signature="e#7675#7682#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Board_logic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="39" column="28" lean-forward="false" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3776#3783#0" expanded="true" />
-            <element signature="e#4842#4843#0" expanded="true" />
-            <element signature="e#4872#4873#0" expanded="true" />
-            <element signature="e#4909#4910#0" expanded="true" />
-            <element signature="e#4939#4940#0" expanded="true" />
-            <element signature="e#4967#4968#0" expanded="true" />
-            <element signature="e#4995#4996#0" expanded="true" />
-            <element signature="e#5021#5022#0" expanded="true" />
-            <element signature="e#5047#5048#0" expanded="true" />
+            <element signature="e#1963#1970#0" expanded="true" />
+            <element signature="e#3780#3802#0" expanded="true" />
+            <element signature="e#4158#4166#0" expanded="true" />
+            <element signature="e#4926#4948#0" expanded="true" />
+            <element signature="e#5192#5200#0" expanded="true" />
+            <element signature="e#5690#5712#0" expanded="true" />
+            <element signature="e#5825#5833#0" expanded="true" />
+            <element signature="e#6256#6263#0" expanded="true" />
+            <element signature="e#6418#6431#0" expanded="true" />
+            <element signature="e#6527#6534#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -7,9 +7,10 @@ public class MineSweeper_logic {
     public static void main(String[] args) {
 
         // Generate Board
-        int width = 5;
-        int len = 5;
+        int width = 10;
+        int len = 10;
         Board_logic board = new Board_logic(width, len);
+        System.out.println("The Game Board: ");
         board.print();
 
         KnowledgeBase kb = new KnowledgeBase();
@@ -34,23 +35,12 @@ public class MineSweeper_logic {
             // get CNF of new clue
             List<KnowledgeBase.Clause> lc = getCNF(le, value);
             for (KnowledgeBase.Clause c: lc) {
-//                System.out.println(c.toString());
                 kb.addClause(c);
             }
-//            for (int i = 0; i < width; i++) {
-//                for (int j = 0 ; j< len; j++) {
-//                    System.out.print(t[i][j] + " ");
-//                }
-//                System.out.println();
-//            }
-//            System.out.println("UPD KB");
             // Update knowledge base
             kb.update(board, hasMine, noMine);
-//            System.out.println("UPD BD");
             // Update board
             board.update(hasMine);
-//            System.out.println("LOG INF");
-//            kb.print();
             // logic inference for the uncleared nodes
             List<Entry> lue = board.getAdjUncNodes(e.x, e.y);
             for (Entry query : lue) {
@@ -59,35 +49,16 @@ public class MineSweeper_logic {
 
             }
             kb.update(board, hasMine, noMine);
-//            kb.print();
         }
 
 
-/*
-        Entry e = new Entry(1,1);
-        Entry e1 = new Entry(1,2);
-        Entry e2 = new Entry(1,3);
-        Entry e3 = new Entry(1,4);
-        List<Entry> le = new ArrayList<Entry>();
-        le.add(e);
-        le.add(e2);
-        le.add(e1);
-        le.add(e3);
-        List<KnowledgeBase.Clause> lc = getCNF(le, 1);
-        KnowledgeBase kb = new KnowledgeBase();
-        for (KnowledgeBase.Clause c : lc) {
-            System.out.println(c.toString());
-            kb.addClause(c);
-        }
-        System.out.println(!kb.infer(new Symbol(e2, false)));
-*/
     }
 
     public static Entry getNextStep(Board_logic board) {
+        System.out.println("<================================>");
         if (!noMine.isEmpty()){
             List<Entry> le = new ArrayList<Entry>(noMine);
-            for (Entry et : le) System.out.print(et.toString());
-            System.out.println();
+
             Entry e = noMine.poll();
             System.out.println("I take :" + e.toString());
             return e;
@@ -99,13 +70,11 @@ public class MineSweeper_logic {
     }
 
     public static void logicInfer(KnowledgeBase kb, Entry query) {
-        System.out.println("Infer kb: " + kb.toSting());
         // if kb contains a positive unit clause, it's a mine
         List<Entry> l = kb.getPositiveUnitClause();
         for (Entry e:l) {
             if(!hasMine.contains(e)) {
                 hasMine.add(e);
-                System.out.println("unit pos: " + e.toString());
             }
         }
         // if kb contains a negative unit clause, it's a mine
@@ -113,7 +82,6 @@ public class MineSweeper_logic {
         for (Entry e:l) {
             if(!noMine.contains(e)) {
                 noMine.add(e);
-                System.out.println("unit neg: " + e.toString());
             }
         }
         // if (kb & !query) is unsatisfiable for any clause in kb, mark query is a mine
@@ -140,6 +108,7 @@ public class MineSweeper_logic {
             System.out.println("Fault: " + minesNum + " mines in " + squareNum + " squares.");
             return null;
         }
+        // if k == n, return all positive unit clause
         if (squareNum == minesNum) {
             for (Entry e: le) {
                 List<Symbol> ls = new ArrayList<Symbol>();

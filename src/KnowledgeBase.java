@@ -102,13 +102,13 @@ public class KnowledgeBase {
 		if (le.size() == 0) return true;
 		if (kb.size() == 0) return false;
 
-//		System.out.println("Infer (" + le.get(0).toString() + ": " + isMine + ") from: " + kb.toString());
 
 		List<Clause> kb_new = new ArrayList<Clause>();
 		Entry currE = le.get(0);
 		List<Entry> le_new = new ArrayList<Entry>(le);
 		le_new.remove(0);
 		for (Clause c: kb) {
+			// resolution for every clause
 			List<Entry> ls_entry = c.getEntries();
 			List<Symbol> ls = c.getSymbols();
 			List<Symbol> new_c = new ArrayList<>();
@@ -116,12 +116,10 @@ public class KnowledgeBase {
 			for (Symbol s : ls) {
 				if (s.e == currE && s.isMine == isMine){
 					isTrue = true;
-//					System.out.println("Find same!");
 					break;
 				}
 
 				else if (s.e == currE && s.isMine == !isMine){
-//					System.out.println("Find comp!");
 					continue;
 				}
 
@@ -185,30 +183,25 @@ public class KnowledgeBase {
 			for (int j=0; j < bd.getLen(); j++) {
 				if (isCleared[i][j]) {
 					knownInfo.add(new Symbol(bd.entries[i][j], false));
-//					System.out.println("From board: clear(" + i + ", " + j + ")");
 				}
 				if (isLabeled[i][j]) {
 					knownInfo.add(new Symbol(bd.entries[i][j], true));
-//					System.out.println("From board: label(" + i + ", " + j + ")");
 				}
 			}
 		}
 		List<Entry> mines = new ArrayList<>(hasMine);
 		for (Entry e : mines) {
 			knownInfo.add(new Symbol(e, true));
-//			System.out.println("From logic: "+e.toString());
 		}
 		List<Entry> nomines = new ArrayList<>(noMine);
 		for (Entry e : nomines) {
 			knownInfo.add(new Symbol(e, false));
-//			System.out.println("From logic: "+e.toString());
 		}
 
 		// Update knowledge base
 		for (Symbol ks : knownInfo) {
 			List<Clause> kb_new = new ArrayList<Clause>();
 			List<Clause> lc = new ArrayList<>(kb);
-//			System.out.println("S: " + ks.toString() + ", KBsize = " + lc.size());
 			for (Clause c: lc) {
 				boolean isTrue = false;
 				List<Symbol> slc = c.getSymbols();
