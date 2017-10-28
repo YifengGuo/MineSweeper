@@ -196,4 +196,7 @@ public class Board_logic {
             System.out.println();
         }
     }
+    public getMinesNum() {
+        return minesNum;
+    }
 }

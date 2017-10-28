@@ -12,6 +12,7 @@ public class MineSweeper_logic {
         Board_logic board = new Board_logic(width, len);
         System.out.println("The Game Board: ");
         board.print();
+        System.out.println("MinesNum = " + board.getMinesNum());
 
         KnowledgeBase kb = new KnowledgeBase();
         // Start Game
